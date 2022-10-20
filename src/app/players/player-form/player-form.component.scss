@@ -1,0 +1,25 @@
+.mat-card{
+  max-width: 80%;
+  margin: 2em auto;
+  text-align: left;
+}
+
+.full-width{
+  width: 100%;
+}
+
+.min-width{
+  width: 100%;
+  min-width: 150px;
+}
+
+.mat-radio-button {
+  display: flex;
+  flex-direction: column;
+  margin: 15px 0;
+  align-items: flex-start;
+}
+
+.mat-card-actions{
+  text-align: center;
+}

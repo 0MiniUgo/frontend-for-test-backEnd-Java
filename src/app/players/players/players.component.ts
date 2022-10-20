@@ -5,6 +5,7 @@ import { catchError } from 'rxjs/operators';
 import { Player } from '../model/player';
 import { PlayersService } from '../services/players.service';
 import { ErrorDialogComponent } from '../../shared/components/error-dialog/error-dialog.component';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-players',
@@ -18,7 +19,9 @@ export class PlayersComponent implements OnInit {
 
   constructor(
     private service: PlayersService,
-    private dialog: MatDialog
+    private dialog: MatDialog,
+    private router: Router,
+    private activatedRoute: ActivatedRoute
   ) {
     this.players$ = this.service.findAll()
     .pipe(
@@ -35,7 +38,9 @@ export class PlayersComponent implements OnInit {
     });
   }
 
-
+  onAdd(){
+    this.router.navigate(['new'], {relativeTo: this.activatedRoute});
+  }
 
   ngOnInit(): void {
   }

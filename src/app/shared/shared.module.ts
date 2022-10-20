@@ -1,9 +1,10 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ErrorDialogComponent } from './components/error-dialog/error-dialog.component';
-import { AppMaterialModule } from './app-material/app-material.module';
-import { GroupPipe } from './pipes/group.pipe';
+import { NgModule } from '@angular/core';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
+import { AppMaterialModule } from './app-material/app-material.module';
+import { ErrorDialogComponent } from './components/error-dialog/error-dialog.component';
+import { GroupPipe } from './pipes/group.pipe';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { GroupPipe } from './pipes/group.pipe';
   ],
   exports: [
     ErrorDialogComponent,
-    GroupPipe
+    GroupPipe,
+    MatFormFieldModule
   ]
 })
 export class SharedModule { }
