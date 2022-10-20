@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Observable, of } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-import { Player } from '../model/player';
-import { PlayersService } from '../services/players.service';
-import { ErrorDialogComponent } from '../../shared/components/error-dialog/error-dialog.component';
+import { Player } from '../../model/player';
+import { PlayersService } from '../../services/players.service';
+import { ErrorDialogComponent } from '../../../shared/components/error-dialog/error-dialog.component';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
@@ -15,7 +15,6 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class PlayersComponent implements OnInit {
 
   players$: Observable<Player[]>;
-  displayedColumns: string[] = ['nome', 'email', 'telefone', 'grupo', 'codinome', 'actions'];
 
   constructor(
     private service: PlayersService,

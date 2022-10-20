@@ -1,8 +1,8 @@
-import { PlayerFormComponent } from './player-form/player-form.component';
+import { PlayerFormComponent } from './containers/player-form/player-form.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { PlayersComponent } from './players/players.component';
+import { PlayersComponent } from './containers/players/players.component';
 
 const routes: Routes = [
   {path: '', component: PlayersComponent},

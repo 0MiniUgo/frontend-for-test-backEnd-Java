@@ -23,4 +23,11 @@ export class PlayersService {
       //delay(5000)
     );
   }
+
+  save(record: Partial<Player>){
+    return this.httpClient.post<Partial<Player>>(this.API, record)
+    .pipe(
+      first()
+    );
+  }
 }
