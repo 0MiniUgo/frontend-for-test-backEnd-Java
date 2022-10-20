@@ -14,7 +14,7 @@ import { ErrorDialogComponent } from '../../shared/components/error-dialog/error
 export class PlayersComponent implements OnInit {
 
   players$: Observable<Player[]>;
-  displayedColumns: string[] = ['nome', 'email', 'telefone', 'grupo', 'codinome'];
+  displayedColumns: string[] = ['nome', 'email', 'telefone', 'grupo', 'codinome', 'actions'];
 
   constructor(
     private service: PlayersService,

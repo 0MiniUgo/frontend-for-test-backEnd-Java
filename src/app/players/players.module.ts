@@ -5,11 +5,13 @@ import { AppMaterialModule } from '../shared/app-material/app-material.module';
 import { SharedModule } from '../shared/shared.module';
 import { PlayersRoutingModule } from './players-routing.module';
 import { PlayersComponent } from './players/players.component';
+import { PlayerFormComponent } from './player-form/player-form.component';
 
 
 @NgModule({
   declarations: [
-    PlayersComponent
+    PlayersComponent,
+    PlayerFormComponent
   ],
   imports: [
     CommonModule,
