@@ -1,0 +1,4 @@
+[
+  {"id": 1, "nome": "Hugo", "email": "hugo@gmail.com", "telefone": "19111111111", "codinome": "Hulk", "grupo": "VINGADORES"},
+  {"id": 2, "nome": "Rick", "email": "rick@gmail.com", "telefone": "19111111111", "codinome": "Lanterna Verde", "grupo": "LIGA_DA_JUSTICA"}
+]
