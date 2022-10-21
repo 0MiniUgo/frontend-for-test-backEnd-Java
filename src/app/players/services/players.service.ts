@@ -39,4 +39,12 @@ export class PlayersService {
       first()
     );
   }
+
+  remove(id: number){
+
+    return this.httpClient.delete(`${this.API}/delete/${id}`)
+    .pipe(
+      first()
+    );
+  }
 }

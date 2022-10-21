@@ -7,6 +7,8 @@ import { PlayersService } from '../../services/players.service';
 import { ErrorDialogComponent } from '../../../shared/components/error-dialog/error-dialog.component';
 import { ActivatedRoute, Router } from '@angular/router';
 import { PlayerModalComponent } from '../player-modal/player-modal.component';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { PlayerModalRemoveComponent } from '../player-modal-remove/player-modal-remove.component';
 
 @Component({
   selector: 'app-players',
@@ -22,7 +24,8 @@ export class PlayersComponent implements OnInit {
     private service: PlayersService,
     private dialog: MatDialog,
     private router: Router,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private snackBar: MatSnackBar
   ) {
     this.players$ = this.service.findAll()
     .pipe(
@@ -52,6 +55,16 @@ export class PlayersComponent implements OnInit {
 
     this.dialog.open(PlayerModalComponent, dialogConfig);
 
+  }
+
+  onRemove(player: Player){
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.disableClose = true;
+    dialogConfig.autoFocus = true;
+
+    dialogConfig.data = player;
+
+    this.dialog.open(PlayerModalRemoveComponent, dialogConfig);
   }
 
   ngOnInit(): void {

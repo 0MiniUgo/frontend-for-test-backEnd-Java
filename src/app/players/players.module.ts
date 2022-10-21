@@ -9,13 +9,15 @@ import { PlayersRoutingModule } from './players-routing.module';
 import { PlayersComponent } from './containers/players/players.component';
 import { PlayersListComponent } from './components/players-list/players-list.component';
 import { PlayerModalComponent } from './containers/player-modal/player-modal.component';
+import { PlayerModalRemoveComponent } from './containers/player-modal-remove/player-modal-remove.component';
 
 @NgModule({
   declarations: [
     PlayersComponent,
     PlayerFormComponent,
     PlayersListComponent,
-    PlayerModalComponent
+    PlayerModalComponent,
+    PlayerModalRemoveComponent
   ],
   imports: [
     CommonModule,

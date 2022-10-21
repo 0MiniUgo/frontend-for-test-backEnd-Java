@@ -12,6 +12,7 @@ export class PlayersListComponent implements OnInit {
   @Input() players: Player[] = [];
   @Output() add = new EventEmitter(false);
   @Output() edit = new EventEmitter(false);
+  @Output() remove = new EventEmitter(false);
 
   readonly displayedColumns: string[] = ['nome', 'email', 'telefone', 'grupo', 'codinome', 'actions'];
 
@@ -29,6 +30,11 @@ export class PlayersListComponent implements OnInit {
   onEdit(player: Player){
 
     this.edit.emit(player);
+  }
+
+  onRemove(player: Player){
+
+    this.remove.emit(player);
   }
 
 }
