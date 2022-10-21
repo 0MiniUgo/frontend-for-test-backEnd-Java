@@ -8,13 +8,14 @@ import { PlayerFormComponent } from './containers/player-form/player-form.compon
 import { PlayersRoutingModule } from './players-routing.module';
 import { PlayersComponent } from './containers/players/players.component';
 import { PlayersListComponent } from './components/players-list/players-list.component';
-
+import { PlayerModalComponent } from './containers/player-modal/player-modal.component';
 
 @NgModule({
   declarations: [
     PlayersComponent,
     PlayerFormComponent,
-    PlayersListComponent
+    PlayersListComponent,
+    PlayerModalComponent
   ],
   imports: [
     CommonModule,
@@ -22,6 +23,9 @@ import { PlayersListComponent } from './components/players-list/players-list.com
     AppMaterialModule, // Modulo compartilhado
     SharedModule,
     ReactiveFormsModule
+  ],
+  entryComponents: [
+    PlayerModalComponent
   ]
 })
 export class PlayersModule { }

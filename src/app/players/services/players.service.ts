@@ -25,7 +25,16 @@ export class PlayersService {
   }
 
   save(record: Partial<Player>){
-    return this.httpClient.post<Partial<Player>>(this.API, record)
+
+    return this.httpClient.post<Player>(this.API, record)
+    .pipe(
+      first()
+    );
+  }
+
+  replace(record: Partial<Player>){
+
+    return this.httpClient.put<Player>(`${this.API}/${record.id}`, record)
     .pipe(
       first()
     );

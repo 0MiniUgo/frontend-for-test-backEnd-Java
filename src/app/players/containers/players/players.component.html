@@ -6,6 +6,7 @@
     *ngIf="players$ | async as players; else loading"
     [players]="players"
     (add)="onAdd()"
+    (edit)="onEdit($event)"
     ></app-players-list>
 
   <ng-template #loading>

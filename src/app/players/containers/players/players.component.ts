@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
+import { MatDialog, MatDialogConfig, MatDialogRef } from '@angular/material/dialog';
 import { Observable, of } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { Player } from '../../model/player';
 import { PlayersService } from '../../services/players.service';
 import { ErrorDialogComponent } from '../../../shared/components/error-dialog/error-dialog.component';
 import { ActivatedRoute, Router } from '@angular/router';
+import { PlayerModalComponent } from '../player-modal/player-modal.component';
 
 @Component({
   selector: 'app-players',
@@ -15,6 +16,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class PlayersComponent implements OnInit {
 
   players$: Observable<Player[]>;
+
 
   constructor(
     private service: PlayersService,
@@ -39,6 +41,17 @@ export class PlayersComponent implements OnInit {
 
   onAdd(){
     this.router.navigate(['new'], {relativeTo: this.activatedRoute});
+  }
+
+  onEdit(player: Player){
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.disableClose = true;
+    dialogConfig.autoFocus = true;
+
+    dialogConfig.data = player;
+
+    this.dialog.open(PlayerModalComponent, dialogConfig);
+
   }
 
   ngOnInit(): void {
