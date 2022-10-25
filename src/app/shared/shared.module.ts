@@ -5,8 +5,6 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { AppMaterialModule } from './app-material/app-material.module';
 import { ErrorDialogComponent } from './components/error-dialog/error-dialog.component';
 import { GroupPipe } from './pipes/group.pipe';
-
-
 @NgModule({
   declarations: [
     ErrorDialogComponent,

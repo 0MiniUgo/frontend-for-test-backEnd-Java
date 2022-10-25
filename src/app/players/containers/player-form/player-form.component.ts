@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { NonNullableFormBuilder } from '@angular/forms';
+import { NonNullableFormBuilder, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
+
 
 import { PlayersService } from '../../services/players.service';
 
@@ -13,10 +14,10 @@ import { PlayersService } from '../../services/players.service';
 export class PlayerFormComponent implements OnInit {
 
   form = this.formBuilder.group({
-    nome: [''],
-    email: [''],
-    telefone: [''],
-    grupo: ['']
+    nome: ['', [Validators.required, Validators.minLength(3)]],
+    email: ['', [Validators.required, Validators.email]],
+    telefone: ['', [Validators.minLength(11), Validators.maxLength(11)]],
+    grupo: ['0', [Validators.required]]
   });
 
   constructor(

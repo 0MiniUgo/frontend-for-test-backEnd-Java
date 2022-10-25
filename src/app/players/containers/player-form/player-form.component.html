@@ -3,15 +3,18 @@
   <mat-card-content>
     <form [formGroup]="form" class="min-width">
       <mat-form-field class="full-width">
-        <input matInput placeholder="Nome" formControlName="nome">
+        <input matInput placeholder="Nome" formControlName="nome" required>
+        <mat-error *ngIf="form.invalid">Nome inválido</mat-error>
       </mat-form-field>
 
       <mat-form-field class="full-width">
-        <input matInput placeholder="Email" formControlName="email">
+        <input matInput placeholder="Email" formControlName="email" required>
+        <mat-error *ngIf="form.invalid">Email inválido</mat-error>
       </mat-form-field>
 
       <mat-form-field class="full-width">
-        <input matInput placeholder="Telefone" formControlName="telefone">
+        <input matInput placeholder="Telefone" formControlName="telefone" required>
+        <mat-error *ngIf="form.invalid">Telefone inválido</mat-error>
       </mat-form-field>
 
       <div  class="full-width">
@@ -24,7 +27,7 @@
     </form>
   </mat-card-content>
   <mat-card-actions>
-    <button mat-raised-button color="primary" (click)="onSubmit()">Cadastrar</button>
+    <button mat-raised-button color="primary" [disabled]="!form.valid" (click)="onSubmit()">Cadastrar</button>
     <button mat-raised-button color="accent" (click)="onList()">Listar Jogadores</button>
   </mat-card-actions>
 </mat-card>
